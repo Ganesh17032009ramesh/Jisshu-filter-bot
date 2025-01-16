@@ -23,10 +23,12 @@ from info import *
 import traceback
 import binascii
 import base64
+from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 
 logger = logging.getLogger(__name__)
 movie_series_db = JsTopDB(DATABASE_URI)
 verification_ids = {}
+user_states = {}
 
 # CHECK COMPONENTS FOLDER FOR MORE COMMANDS
 @Client.on_message(filters.command("invite") & filters.private & filters.user(ADMINS))
