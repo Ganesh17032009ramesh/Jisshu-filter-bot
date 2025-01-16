@@ -1151,12 +1151,19 @@ async def reset_group_command(client, message):
 
 #delete fuction add by ganesh
 
-async def delete_previous_reply(client: Client, chat_id: int, message_id: int):
-    """Deletes a previous reply message."""
+async def delete_previous_reply(client, chat_id, message_id):
+    """
+    Deletes a specific message in a chat.
+    Parameters:
+        - client: The Pyrogram client instance.
+        - chat_id: The chat ID where the message was sent.
+        - message_id: The message ID of the reply to delete.
+    """
     try:
         await client.delete_messages(chat_id, message_id)
     except Exception as e:
-        print(f"Error while deleting message: {e}")
+        print(f"Failed to delete message {message_id} in chat {chat_id}: {e}")
+
         
 
 
@@ -1171,12 +1178,32 @@ async def post_command(client, message):
 
 
 
+from pyrogram import Client, filters
+
+# Initialize user_states dictionary to track user states
+user_states = {}
+
+async def delete_previous_reply(client, chat_id):
+    """
+    Deletes the previous reply based on chat_id and the last_reply's message_id.
+    Parameters:
+        - client: The Pyrogram client instance.
+        - chat_id: The chat ID where the message was sent.
+    """
+    try:
+        if chat_id in user_states and "last_reply" in user_states[chat_id]:
+            last_reply = user_states[chat_id]["last_reply"]
+            await client.delete_messages(chat_id, last_reply.message_id)
+    except Exception as e:
+        print(f"Failed to delete previous reply in chat {chat_id}: {e}")
+
 @Client.on_message(filters.private & (filters.text | filters.media) & ~filters.command("post"))
 async def handle_message(client, message):
     try:
         chat_id = message.chat.id
         
-        await delete_previous_reply(chat_id)
+        # Call delete_previous_reply with chat_id
+        await delete_previous_reply(client, chat_id)
         
         if chat_id in user_states:
             current_state = user_states[chat_id]["state"]
