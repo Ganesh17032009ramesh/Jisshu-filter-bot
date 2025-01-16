@@ -164,3 +164,16 @@ cmds = [
     {"grp_cmds": "Check Group Commands"},
     {"admin_cmds": "Bot Admin Commands"}
 ]
+
+
+
+#Post features 
+DIRECT_GEN_DB = int(os.environ.get("DIRECT_GEN_DB", "-1002225048791"))
+DIRECT_GEN_URL = os.environ.get("DIRECT_GEN_URL", "https://broken-fancie-aliit-9411b6c9.koyeb.app/")
+DIRECT_GEN = bool(DIRECT_GEN_DB and DIRECT_GEN_URL)
+
+POST_MODE= bool(environ.get('POST_MODE', True))
+POST_SHORT_API = environ.get('POST_SHORT_API', '00039eb814cd3bb235861f83e548751ddf814da3')
+POST_SHORT_URL = environ.get('POST_SHORT_URL', 'instantlinks.co')
+
+HOW_TO_POST_SHORT = environ.get('HOW_TO_POST_SHORT', 'https://t.me/How_To_Get_Movie')
