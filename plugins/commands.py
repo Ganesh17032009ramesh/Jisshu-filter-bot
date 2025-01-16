@@ -24,6 +24,7 @@ import traceback
 import binascii
 import base64
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
+from pyrogram import Client
 
 logger = logging.getLogger(__name__)
 movie_series_db = JsTopDB(DATABASE_URI)
@@ -1147,7 +1148,16 @@ async def reset_group_command(client, message):
     reply_markup = InlineKeyboardMarkup(btn)
     await save_default_settings(grp_id)
     await message.reply_text('ꜱᴜᴄᴄᴇꜱꜱғᴜʟʟʏ ʀᴇꜱᴇᴛ ɢʀᴏᴜᴘ ꜱᴇᴛᴛɪɴɢꜱ...')
-    
+
+#delete fuction add by ganesh
+
+async def delete_previous_reply(client: Client, chat_id: int, message_id: int):
+    """Deletes a previous reply message."""
+    try:
+        await client.delete_messages(chat_id, message_id)
+    except Exception as e:
+        print(f"Error while deleting message: {e}")
+        
 
 
 #post features 
