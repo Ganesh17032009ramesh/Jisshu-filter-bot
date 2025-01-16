@@ -25,7 +25,7 @@ import binascii
 import base64
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from pyrogram import Client
-from info import HOW_TO_POST_SHORT, ADMINS, DIRECT_GEN_DB
+from info import HOW_TO_POST_SHORT, ADMINS, DIRECT_GEN_DB, DIRECT_GEN_URL
 
 logger = logging.getLogger(__name__)
 movie_series_db = JsTopDB(DATABASE_URI)
