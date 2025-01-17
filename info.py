@@ -15,14 +15,14 @@ def is_enabled(value, default):
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = int(environ.get('API_ID', '20902603'))
 API_HASH = environ.get('API_HASH', '79e5caa103a9e9fb0183390b4800845d')
-BOT_TOKEN = environ.get('BOT_TOKEN', '7636711024:AAH0nfu_L2YfUYpNsIyYwnQMevx4RkhnS_o')
+BOT_TOKEN = environ.get('BOT_TOKEN', '8191914032:AAGr4VP7mIkmtu2lcCySQ0-VC6fo5SXh25U')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6283322330').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1918079773').split()]
 USERNAME = environ.get('USERNAME', "https://t.me/Cr3atives_Cortexx") # ADMIN USERNAME
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002373005947'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002423270359'))
 MOVIE_GROUP_LINK = environ.get('MOVIE_GROUP_LINK', 'https://t.me/+r6gFFy1knfw3YTBl')
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002225048791').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1002413283517').split()]
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://Mastersender:17032008@cluster0.dt8i8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
