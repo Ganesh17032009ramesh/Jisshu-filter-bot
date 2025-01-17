@@ -169,7 +169,7 @@ cmds = [
 
 #Post features 
 DIRECT_GEN_DB = int(os.environ.get("DIRECT_GEN_DB", "-1002413283517"))
-DIRECT_GEN_URL = os.environ.get("DIRECT_GEN_URL", "https://broken-fancie-aliit-9411b6c9.koyeb.app/")
+DIRECT_GEN_URL = os.environ.get("DIRECT_GEN_URL", "https://variable-inge-aliit-efc97f02.koyeb.app/")
 DIRECT_GEN = bool(DIRECT_GEN_DB and DIRECT_GEN_URL)
 
 POST_MODE= bool(environ.get('POST_MODE', True))
