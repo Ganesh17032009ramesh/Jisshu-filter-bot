@@ -5,7 +5,6 @@ import asyncio
 import string
 import pytz
 import binascii
-import base64
 from datetime import timedelta
 from datetime import datetime as dt
 from Script import script
@@ -19,12 +18,9 @@ from database.topdb import JsTopDB
 from database.jsreferdb import referdb
 from plugins.pm_filter import auto_filter
 from utils import formate_file_name,  get_settings, save_group_settings, is_req_subscribed, get_size, get_shortlink, is_check_admin, get_status, temp, get_readable_time, save_default_settings, gen_link, clean_title, get_poster, temp, short_link
-import re
-import base64
 from info import *
 import traceback
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
-from pyrogram import Client
 
 
 logger = logging.getLogger(__name__)
