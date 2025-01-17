@@ -26,8 +26,8 @@ from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 
 logger = logging.getLogger(__name__)
 movie_series_db = JsTopDB(DATABASE_URI)
-verification_ids = {}
 user_states = {}
+verification_ids = {}
 
 # CHECK COMPONENTS FOLDER FOR MORE COMMANDS
 @Client.on_message(filters.command("invite") & filters.private & filters.user(ADMINS))
@@ -1162,6 +1162,8 @@ async def delete_previous_reply(client, chat_id, message_id):
     except Exception as e:
         print(f"Failed to delete message {message_id} in chat {chat_id}: {e}")
 
+
+user_states = {}
 
 @Client.on_message(filters.command("post") & filters.user(ADMINS))
 async def post_command(client, message):
