@@ -31,17 +31,17 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'My_Tg_files')
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 #----------- There will be channel id add in all these ---------
-LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', '-1002452488527'))  # set shortner log channel
+LOG_API_CHANNEL = int(environ.get('LOG_API_CHANNEL', ''))  # set shortner log channel
 DELETE_CHANNELS = int(environ.get('DELETE_CHANNELS','0')) # The movie you upload in it will be deleted from the bot.
-LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', '-1002362494597'))
-auth_channel = environ.get('AUTH_CHANNEL', '-1002383211421')
-SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', '-1002255175810'))
-request_channel = environ.get('REQUEST_CHANNEL', '-1002297403230') # If anyone sends a request message to your bot, you will get it in this channel.
-MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '-1002452488527')) # 
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/') #Support group link ( make sure bot is admin )
+LOG_VR_CHANNEL = int(environ.get('LOG_VR_CHANNEL', ''))
+auth_channel = environ.get('AUTH_CHANNEL', '')
+SUPPORT_GROUP = int(environ.get('SUPPORT_GROUP', ''))
+request_channel = environ.get('REQUEST_CHANNEL', '') # If anyone sends a request message to your bot, you will get it in this channel.
+MOVIE_UPDATE_CHANNEL = int(environ.get('MOVIE_UPDATE_CHANNEL', '')) # 
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', '') #Support group link ( make sure bot is admin )
 #---------------------------------------------------------------
 #---------------------------------------------------------------
-IS_VERIFY = is_enabled('IS_VERIFY', True)
+IS_VERIFY = is_enabled('IS_VERIFY', False)
 #---------------------------------------------------------------
 TUTORIAL = environ.get("TUTORIAL", "https://t.me/How_To_Get_Movie")
 TUTORIAL_2 = environ.get("TUTORIAL_2", "https://t.me/How_To_Get_Movie")
@@ -168,7 +168,7 @@ cmds = [
 
 
 #Post features 
-DIRECT_GEN_DB = int(os.environ.get("DIRECT_GEN_DB", "-1002225048791"))
+DIRECT_GEN_DB = int(os.environ.get("DIRECT_GEN_DB", "-1002413283517"))
 DIRECT_GEN_URL = os.environ.get("DIRECT_GEN_URL", "https://broken-fancie-aliit-9411b6c9.koyeb.app/")
 DIRECT_GEN = bool(DIRECT_GEN_DB and DIRECT_GEN_URL)
 
