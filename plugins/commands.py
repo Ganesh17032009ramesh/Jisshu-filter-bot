@@ -5,6 +5,7 @@ import asyncio
 import string
 import pytz
 import binascii
+import base64
 from datetime import timedelta
 from datetime import datetime as dt
 from Script import script
