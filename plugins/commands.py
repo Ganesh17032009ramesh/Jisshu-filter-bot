@@ -4,6 +4,8 @@ import random
 import asyncio
 import string
 import pytz
+import binascii
+import base64
 from datetime import timedelta
 from datetime import datetime as dt
 from Script import script
@@ -21,8 +23,6 @@ import re
 import base64
 from info import *
 import traceback
-import binascii
-import base64
 from pyrogram.errors.exceptions.bad_request_400 import MessageTooLong
 from pyrogram import Client
 
@@ -1165,10 +1165,7 @@ async def delete_previous_reply(client, chat_id, message_id):
     except Exception as e:
         print(f"Failed to delete message {message_id} in chat {chat_id}: {e}")
 
-        
 
-
-#post features 
 @Client.on_message(filters.command("post") & filters.user(ADMINS))
 async def post_command(client, message):
     try:
@@ -1178,33 +1175,12 @@ async def post_command(client, message):
         await message.reply(f"Error occurred: {e}")
 
 
-
-from pyrogram import Client, filters
-
-# Initialize user_states dictionary to track user states
-user_states = {}
-
-async def delete_previous_reply(client, chat_id):
-    """
-    Deletes the previous reply based on chat_id and the last_reply's message_id.
-    Parameters:
-        - client: The Pyrogram client instance.
-        - chat_id: The chat ID where the message was sent.
-    """
-    try:
-        if chat_id in user_states and "last_reply" in user_states[chat_id]:
-            last_reply = user_states[chat_id]["last_reply"]
-            await client.delete_messages(chat_id, last_reply.message_id)
-    except Exception as e:
-        print(f"Failed to delete previous reply in chat {chat_id}: {e}")
-
 @Client.on_message(filters.private & (filters.text | filters.media) & ~filters.command("post"))
 async def handle_message(client, message):
     try:
         chat_id = message.chat.id
         
-        # Call delete_previous_reply with chat_id
-        await delete_previous_reply(client, chat_id)
+        await delete_previous_reply(chat_id)
         
         if chat_id in user_states:
             current_state = user_states[chat_id]["state"]
